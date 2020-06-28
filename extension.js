@@ -58,6 +58,7 @@ function activate(context) {
       process.stderr.on('data', (err) => {
         console.log(err.toString());
       });
+      // End Open the new python child processor
 
       // const panel = vscode.window.createWebviewPanel(
       //   'pseudocode',
@@ -68,8 +69,12 @@ function activate(context) {
 
       // panel.webview.html = getWebViewContent(seedMessage);
 
-      //   vscode.window.showInformationMessage(`${seedMessage}`, { modal: true });
-      //   vscode.window.showInformationMessage('https://www.naver.com');
+      // vscode.window.showInformationMessage(``,);
+
+      // !!! OUR LAST RESORT ---- UNCOMMENT THE LINE BELOW
+      // vscode.window.showInformationMessage('Your pseudocode is now available at: https://aristotle-256e4b.webflow.io/');
+
+
       //   const response = await fetch(`https://api.datamuse.com/words?ml=${text}`);
       //   const data = await response.json();
 
@@ -91,7 +96,7 @@ function activate(context) {
 exports.activate = activate;
 
 // this method is called when your extension is deactivated
-function deactivate() {}
+function deactivate() { }
 
 module.exports = {
   activate,

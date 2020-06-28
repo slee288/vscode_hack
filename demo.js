@@ -37,19 +37,24 @@ const getWebViewContent = (text) => {
             <title>Pseudo Code</title>
         </head>
         <body>
-          <select>
-            <option value="english">jj</option>
-            <option value="french">kj</option>
-            <option value="spanish">lj</option>
-            <option value="korean">sj</option>
-          </select>
-          <pre>${text}</pre>
+          <pre class="main-content">${text}</pre>
         </body>
 
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script>
-          const selector = document.querySelector("select");
+          const selector = document.querySelector(".lang-change");
           selector.addEventListener("change", (e) => {
             console.log(e.target.value);
+            $.ajax({
+              type: "GET",
+              url: "https://www.naver.com",
+              success: function log(response) {
+                console.log("this shit is working", response);
+              },
+              error: function log(error) {
+                console.log("this shit is not working WHAT THE FUCK", error);
+              }
+            });
           });
         </script>
     </html>
